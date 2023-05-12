@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.addteamcontroller">
+   <children>
+      <Label alignment="CENTER" layoutX="256.0" layoutY="37.0" text="Add Team scene" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="171.0" prefHeight="22.0" prefWidth="100.0" text="create a team">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="teamNamefield" layoutX="153.0" layoutY="167.0" prefHeight="26.0" prefWidth="100.0" />
+      <TextField fx:id="teamCapacityfield" layoutX="272.0" layoutY="167.0" prefHeight="26.0" prefWidth="100.0" />
+      <Label layoutX="163.0" layoutY="135.0" text="team name">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Label layoutX="273.0" layoutY="135.0" text="team capacity">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Button fx:id="createTeamOK" layoutX="394.0" layoutY="164.0" mnemonicParsing="false" onAction="#createTeamOKaction" prefHeight="31.0" prefWidth="66.0" text="ok">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Label fx:id="addstuLabel" layoutX="28.0" layoutY="307.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="110.0" text="add students" visible="false">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <TextField fx:id="studentIdfield" layoutX="153.0" layoutY="307.0" prefHeight="26.0" prefWidth="100.0" visible="false" AnchorPane.leftAnchor="147.0" />
+      <Button fx:id="addStudent" layoutX="514.0" layoutY="304.0" mnemonicParsing="false" onAction="#addStudentaction" text="add" visible="false">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Label layoutX="28.0" layoutY="101.0" text="team creator">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="stuID" layoutX="153.0" layoutY="97.0" prefHeight="26.0" prefWidth="100.0" />
+      <TextField fx:id="stuFN" layoutX="272.0" layoutY="97.0" prefHeight="26.0" prefWidth="100.0" />
+      <TextField fx:id="stuLN" layoutX="394.0" layoutY="97.0" prefHeight="26.0" prefWidth="100.0" />
+      <Label layoutX="195.0" layoutY="70.0" text="ID">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="286.0" layoutY="70.0" text="first name">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="410.0" layoutY="70.0" text="last name">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="studentFNfield" layoutX="272.0" layoutY="307.0" prefHeight="26.0" prefWidth="100.0" visible="false" />
+      <TextField fx:id="studentLNfield" layoutX="394.0" layoutY="307.0" prefHeight="26.0" prefWidth="100.0" visible="false" />
+      <Label fx:id="s1" layoutX="195.0" layoutY="277.0" text="ID" visible="false">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="s2" layoutX="286.0" layoutY="277.0" text="first name" visible="false">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="s3" layoutX="410.0" layoutY="277.0" text="last name" visible="false">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="goBackAddteam" layoutX="36.0" layoutY="25.0" mnemonicParsing="false" onAction="#goBackAddteamAction" text="Back" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Label fx:id="TM_left" alignment="CENTER" layoutX="319.0" layoutY="225.0" text="0" textAlignment="CENTER" visible="false">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="TML" layoutX="163.0" layoutY="230.0" text="Team member left :" visible="false">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

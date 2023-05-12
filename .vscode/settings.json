@@ -1,0 +1,10 @@
+{
+    "java.classpath": [
+        "lib/javax.mail.jar",
+        "${workspaceFolder}/bin",
+        "${workspaceFolder}/src",
+        "D:/KFUPM/a222/SWE206/loginpro/src/main/java/com/example/lib/*",
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "maven.view": "hierarchical"
+}
