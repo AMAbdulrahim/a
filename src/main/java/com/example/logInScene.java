@@ -1,6 +1,13 @@
 package com.example;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,7 +35,36 @@ public class logInScene extends App {
 
     
     @FXML
-    void loginbtnAct(ActionEvent event) throws IOException {
+    void loginbtnAct(ActionEvent event) throws IOException, URISyntaxException {
+
+        String string = "http://example.com";
+
+        URL url = (new URI(string)).toURL();
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("GET");
+
+
+
+        HttpURLConnection req = (HttpURLConnection) url.openConnection();
+        req.setRequestMethod("GET"); // specify the request type
+        req.setConnectTimeout(5000);
+        req.setReadTimeout(5000);
+
+
+
+        int status = req.getResponseCode();
+
+
+        BufferedReader in = new BufferedReader(
+        new InputStreamReader(con.getInputStream()));
+        String inputLine;
+        StringBuffer content = new StringBuffer();
+        while ((inputLine = in.readLine()) != null) {
+            System.out.println();
+        content.append(inputLine);
+        }
+
+
 
         if (username.getText().equals("s") & password.getText().equals("1")){
             Parent root = FXMLLoader.load(getClass().getResource("sbFiles/stu.fxml"));

@@ -11,8 +11,6 @@ import java.util.ResourceBundle;
 
 import com.example.programJFiles.Tournament;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
