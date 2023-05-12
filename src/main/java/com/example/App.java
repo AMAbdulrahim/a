@@ -1,12 +1,29 @@
 package com.example;
 
+import java.util.ArrayList;
+
+import com.example.programJFiles.Game;
+import com.example.programJFiles.Student;
+import com.example.programJFiles.Team;
+import com.example.programJFiles.Tournament;
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class App extends Application {
+
+    Team team0;
+    Student stu;
+    Student addstu;
+    Tournament tour;
+    Game game;
+
+    @FXML
+    static
+    ArrayList<String> teams = new ArrayList<>();
 
 
     String[] a = {"Team 1", "Team 2", "Team 3", "Team 4", "Team 5", "Team 6", "Team 7", "Team 8", "Team 9", "Team 10",
@@ -18,9 +35,7 @@ public class App extends Application {
     protected Stage stage;
     protected Scene scene;
     protected Parent root;
-    
-
-    public Stage primaryStage;
+    protected Stage primaryStage;
 
     @Override
     public void start(Stage primaryStage) throws Exception {

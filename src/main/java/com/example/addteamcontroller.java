@@ -1,9 +1,7 @@
 package com.example;
 
 import java.io.IOException;
-
 import com.example.programJFiles.*;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,10 +21,7 @@ public class addteamcontroller extends notStuController {
     private Label addstuLabel;
 
     @FXML
-    private Label TM_left;
-
-    @FXML
-    private Label TML;
+    private Label TM_left,TML;
 
     @FXML
     private Label s1,s2,s3;
@@ -44,19 +39,10 @@ public class addteamcontroller extends notStuController {
     private TextField stuFN,stuID,stuLN;
 
     @FXML
-    private TextField studentFNfield;
+    private TextField studentFNfield,studentLNfield,studentIdfield;
 
     @FXML
-    private TextField studentIdfield;
-
-    @FXML
-    private TextField studentLNfield;
-
-    @FXML
-    private TextField teamCapacityfield;
-
-    @FXML
-    private TextField teamNamefield;
+    private TextField teamCapacityfield,teamNamefield;
 
     
     @FXML
@@ -71,9 +57,7 @@ public class addteamcontroller extends notStuController {
         }
         else {
             team0.addStudent(addstu);
-            //TM_left.setText(Integer.toString(Integer.parseInt(teamCapacityfield.getText())-1));
         }
-
         studentIdfield.setText("");studentFNfield.setText("");studentLNfield.setText("");
 
     }
@@ -85,7 +69,6 @@ public class addteamcontroller extends notStuController {
         stu.getID();
         
         stuFN.setText("");stuID.setText("");stuLN.setText("");
-        //teamCapacityfield.setText(""); //teamNamefield.setText("")
 
 
         Alert alert = new Alert(AlertType.INFORMATION);
@@ -94,9 +77,6 @@ public class addteamcontroller extends notStuController {
         alert.showAndWait();
 
         if (Integer.parseInt(teamCapacityfield.getText())!=1){
-            //int c = Integer.parseInt(teamCapacityfield.getText());
-            //TM_left.setText(teamCapacityfield.getText());TM_left.setVisible(true); 
-            //TML.setVisible(true);
             addstuLabel.setVisible(true);studentIdfield.setVisible(true);addStudent.setVisible(true);
             studentFNfield.setVisible(true);studentLNfield.setVisible(true);
             s1.setVisible(true);s2.setVisible(true);s3.setVisible(true);

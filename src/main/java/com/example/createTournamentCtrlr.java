@@ -1,7 +1,6 @@
 package com.example;
 
 import java.io.IOException;
-
 import com.example.programJFiles.Game;
 import com.example.programJFiles.Tournament;
 import javafx.event.ActionEvent;
@@ -21,31 +20,13 @@ import javafx.stage.Stage;
 public class createTournamentCtrlr extends notStuController{
 
     @FXML
-    private Button BackCT;
+    private Button BackCT,addTeamsbtn,createBtn;
 
     @FXML
-    private Button addTeamsbtn;
+    private TextField maxTeams,tourName,tourGame,teamCapacity;
 
     @FXML
-    private Button createBtn;
-
-    @FXML
-    private TextField maxTeams;
-
-    @FXML
-    private TextField tourGame;
-
-    @FXML
-    private TextField tourName;
-
-    @FXML
-    private TextField teamCapacity;
-
-    @FXML
-    private RadioButton tourTypeE;
-
-    @FXML
-    private RadioButton tourTypeRR;
+    private RadioButton tourTypeE,tourTypeRR;
 
     @FXML
     private Label clickheretoaddteams;
@@ -58,7 +39,6 @@ public class createTournamentCtrlr extends notStuController{
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
 
     @FXML
@@ -68,9 +48,6 @@ public class createTournamentCtrlr extends notStuController{
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
-
-
     }
 
     @FXML
@@ -84,13 +61,11 @@ public class createTournamentCtrlr extends notStuController{
         else if (tourTypeRR.isSelected())
             tour = new Tournament(tourName.getText(), game,Tournament.Type.ROUNDROBBIN, Integer.parseInt(maxTeams.getText()));
 
-            
-            Alert alert = new Alert(AlertType.INFORMATION);
-            alert.setTitle("Tournament created");alert.setHeaderText(null);
-            alert.setContentText("Tournament created successfully.");
-            alert.showAndWait();
-
-            addTeamsbtn.setVisible(true);clickheretoaddteams.setVisible(true);
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Tournament created");alert.setHeaderText(null);
+        alert.setContentText("Tournament created successfully.");
+        alert.showAndWait();
+        addTeamsbtn.setVisible(true);clickheretoaddteams.setVisible(true);
 
         
             

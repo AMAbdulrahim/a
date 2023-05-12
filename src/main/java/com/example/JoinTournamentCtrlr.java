@@ -1,8 +1,8 @@
 package com.example;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -55,7 +55,7 @@ public class JoinTournamentCtrlr extends stuController implements Initializable{
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        for(int i =0,h='a';i<a.length;i++,h++){availabletoursLV.getItems().add(a[0]+h);}
+        for(int i =0,h='a';i<a.length;i++,h++){availabletoursLV.getItems().add(a[i]+h);}
     }
 
     

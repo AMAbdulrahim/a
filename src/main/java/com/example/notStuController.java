@@ -4,12 +4,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-
 import com.example.programJFiles.Game;
 import com.example.programJFiles.Student;
 import com.example.programJFiles.Team;
 import com.example.programJFiles.Tournament;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,28 +20,13 @@ import javafx.stage.Stage;
 
 public class notStuController extends App implements Initializable{
 
-    Team team0;
-    Student stu;
-    Student addstu;
-    Tournament tour;
-    Game game;
-
-
-    @FXML
-    static
-    ArrayList<String> teams = new ArrayList<>();
+    
 
     @FXML
     private Button addTeam;
 
     @FXML
     private Button viewArchivedTournamentButton;
-
-    @FXML
-    private Button createtours;
-
-    @FXML
-    private Button createToursE;
 
     @FXML
     private Button createTournamentBtn;

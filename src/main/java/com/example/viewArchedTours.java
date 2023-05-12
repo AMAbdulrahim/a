@@ -4,7 +4,6 @@ package com.example;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -25,7 +24,6 @@ import javafx.stage.Stage;
 
 public class viewArchedTours extends notStuController implements Initializable{
 
-    
     @FXML
     private ListView<String> toursshow;
 
@@ -44,10 +42,6 @@ public class viewArchedTours extends notStuController implements Initializable{
     private Label showenLabel;
 
 
-
-    
-
-
     @FXML
     void exitProgram(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("sbFiles/nstu.fxml"));
@@ -64,17 +58,13 @@ public class viewArchedTours extends notStuController implements Initializable{
 
         showenLabel.setStyle("-fx-font-weight: bold;");showenLabel.setStyle("-fx-font-size: 20px;");
         showenLabel.setText(s.toString());
-        //System.out.println(s.toString());
 
     }
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         
-        // Student s = new Student(202039600, "Ali", "Abdulrahim");
-        // Team t = new Team("Ahmed", 10,s );
-        // teams.add(t.getName());
-        //for (int i = 0; i < a.length; i++) {teams.add(a[i]);}
+        
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////// search bar
@@ -95,8 +85,6 @@ public class viewArchedTours extends notStuController implements Initializable{
         });
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    // hi//
     }
 
 }
