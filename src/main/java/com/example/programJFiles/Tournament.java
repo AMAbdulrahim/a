@@ -1,9 +1,10 @@
 package com.example.programJFiles;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Tournament {
+public class Tournament implements Serializable{
 	private String name;
 	private Game game;
 	private Type type;

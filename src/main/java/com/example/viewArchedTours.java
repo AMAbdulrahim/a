@@ -1,9 +1,16 @@
 
 package com.example;
 
+import java.io.EOFException;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import com.example.programJFiles.Tournament;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -36,7 +43,6 @@ public class viewArchedTours extends notStuController implements Initializable{
     @FXML
     private MenuItem show;
 
-    private ObservableList<String> items;
 
     @FXML
     private Label showenLabel;
@@ -63,13 +69,49 @@ public class viewArchedTours extends notStuController implements Initializable{
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
+
+    for (int i = 0; i < a.length; i++) {items.add(a[i]);}
+
         
+        try {
+            fileInT = new FileInputStream("tournament.txt");
+            inT = new ObjectInputStream(fileInT);
+
+
+            
+
+            while (true) {
+                try {
+                    Tournament tour = (Tournament) inT.readObject();
+                    items.add(tour.getName());
+                    System.out.println(tour.getName());
+
+                } catch (EOFException e) {
+                    break; 
+                } 
+
+                
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        
+
+            
+        
+        
+
+            
         
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////// search bar
         
-        items = FXCollections.observableArrayList();for (int i = 0; i < a.length; i++) {items.add(a[i]);}
 
         FilteredList<String> filteredList = new FilteredList<>(items, p -> true);
         toursshow.setItems(filteredList);

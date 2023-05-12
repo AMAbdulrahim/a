@@ -1,6 +1,9 @@
 package com.example;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
+
 import com.example.programJFiles.Game;
 import com.example.programJFiles.Tournament;
 import javafx.event.ActionEvent;
@@ -32,6 +35,9 @@ public class createTournamentCtrlr extends notStuController{
     private Label clickheretoaddteams;
 
 
+    
+
+
     @FXML
     void BackCTAction(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("sbFiles/nstu.fxml"));
@@ -51,15 +57,37 @@ public class createTournamentCtrlr extends notStuController{
     }
 
     @FXML
-    void createBtnAction(ActionEvent event) {
+    void createBtnAction(ActionEvent event) throws IOException {
 
-        game = new Game(tourGame.getText(), Integer.parseInt(teamCapacity.getText()));
+        fileOutT = new FileOutputStream("tournament.txt");
+        outT = new ObjectOutputStream(fileOutT);
+
+        Game game = new Game(tourGame.getText(), Integer.parseInt(teamCapacity.getText()));
 
         
-        if (tourTypeE.isSelected())
-            tour = new Tournament(tourName.getText(), game,Tournament.Type.BRACKETS, Integer.parseInt(maxTeams.getText()));  
-        else if (tourTypeRR.isSelected())
-            tour = new Tournament(tourName.getText(), game,Tournament.Type.ROUNDROBBIN, Integer.parseInt(maxTeams.getText()));
+        if (tourTypeE.isSelected()){
+
+            Tournament tour = new Tournament(tourName.getText(), game,Tournament.Type.BRACKETS, Integer.parseInt(maxTeams.getText()));
+            outT.writeObject(tour);
+            items.add(tour.getName());
+
+
+
+
+        }
+        else if (tourTypeRR.isSelected()){
+            Tournament tour = new Tournament(tourName.getText(), game,Tournament.Type.ROUNDROBBIN, Integer.parseInt(maxTeams.getText()));
+            outT.writeObject(tour);
+
+       
+
+        }
+
+        outT.close();
+        fileOutT.close();
+
+
+
 
         Alert alert = new Alert(AlertType.INFORMATION);
         alert.setTitle("Tournament created");alert.setHeaderText(null);

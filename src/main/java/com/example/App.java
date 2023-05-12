@@ -1,5 +1,9 @@
 package com.example;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 import com.example.programJFiles.Game;
@@ -7,6 +11,8 @@ import com.example.programJFiles.Student;
 import com.example.programJFiles.Team;
 import com.example.programJFiles.Tournament;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,6 +26,14 @@ public class App extends Application {
     Student addstu;
     Tournament tour;
     Game game;
+
+    FileOutputStream fileOutT;
+    ObjectOutputStream outT;
+
+    FileInputStream fileInT;
+    ObjectInputStream inT;
+    
+    protected ObservableList<String> items=FXCollections.observableArrayList();
 
     @FXML
     static
