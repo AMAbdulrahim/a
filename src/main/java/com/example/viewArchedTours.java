@@ -70,46 +70,41 @@ public class viewArchedTours extends notStuController implements Initializable{
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
 
+        
     for (int i = 0; i < a.length; i++) {items.add(a[i]);}
 
         
-        try {
-            fileInT = new FileInputStream("tournament.txt");
-            inT = new ObjectInputStream(fileInT);
+    try {
+        fileInT = new FileInputStream("tournament.txt");
+        inT = new ObjectInputStream(fileInT);
 
+        while (true) {
+            try {
+                Tournament tour = (Tournament) inT.readObject();
+                items.add(tour.getName());
+                System.out.println(tour.getName());
+
+            } catch (EOFException e) {
+                break; 
+            } 
 
             
-
-            while (true) {
-                try {
-                    Tournament tour = (Tournament) inT.readObject();
-                    items.add(tour.getName());
-                    System.out.println(tour.getName());
-
-                } catch (EOFException e) {
-                    break; 
-                } 
-
-                
-            }
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         }
-        
 
-            
-        
-        
+    } catch (FileNotFoundException e) {
+        e.printStackTrace();
+    } catch (IOException e) {
+        e.printStackTrace();
+    } catch (ClassNotFoundException e) {
+        e.printStackTrace();
+    }
+    
 
-            
         
+    
+    
 
-
+ 
 ///////////////////////////////////////////////////////////////////////////////////////////////////// search bar
         
 

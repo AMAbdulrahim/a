@@ -1,5 +1,6 @@
 package com.example;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -57,7 +58,7 @@ public class createTournamentCtrlr extends notStuController{
     }
 
     @FXML
-    void createBtnAction(ActionEvent event) throws IOException {
+    void createBtnAction(ActionEvent event) throws IOException  {
 
         fileOutT = new FileOutputStream("tournament.txt");
         outT = new ObjectOutputStream(fileOutT);
@@ -85,8 +86,6 @@ public class createTournamentCtrlr extends notStuController{
 
         outT.close();
         fileOutT.close();
-
-
 
 
         Alert alert = new Alert(AlertType.INFORMATION);

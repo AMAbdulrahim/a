@@ -1,5 +1,6 @@
 package com.example;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -20,6 +21,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class App extends Application {
+
+    String file = "tournament.dat";
 
     Team team0;
     Student stu;
