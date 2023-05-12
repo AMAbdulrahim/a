@@ -75,7 +75,7 @@ public class viewArchedTours extends notStuController implements Initializable{
 
         
     try {
-        fileInT = new FileInputStream("tournament.txt");
+        fileInT = new FileInputStream("tournament.dat");
         inT = new ObjectInputStream(fileInT);
 
         while (true) {

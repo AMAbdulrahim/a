@@ -60,7 +60,7 @@ public class createTournamentCtrlr extends notStuController{
     @FXML
     void createBtnAction(ActionEvent event) throws IOException  {
 
-        fileOutT = new FileOutputStream("tournament.txt");
+        fileOutT = new FileOutputStream("tournament.dat");
         outT = new ObjectOutputStream(fileOutT);
 
         Game game = new Game(tourGame.getText(), Integer.parseInt(teamCapacity.getText()));

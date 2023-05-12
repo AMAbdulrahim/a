@@ -22,7 +22,6 @@ import javafx.stage.Stage;
 
 public class App extends Application {
 
-    String file = "tournament.dat";
 
     Team team0;
     Student stu;
