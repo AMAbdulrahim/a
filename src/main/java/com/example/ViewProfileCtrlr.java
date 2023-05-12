@@ -8,6 +8,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class ViewProfileCtrlr extends stuController{
@@ -16,12 +18,20 @@ public class ViewProfileCtrlr extends stuController{
     private Button VPBack;
 
     @FXML
+    private ListView<?> previousTours;
+
+    @FXML
     void VPBackAction(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("sbFiles/stu.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
+    }
+
+    @FXML
+    void previousToursAction(MouseEvent event) {
 
     }
     

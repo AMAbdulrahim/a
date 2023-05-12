@@ -1,19 +1,29 @@
 package com.example;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 public class stuController extends App {
 
     @FXML
     private Button JoinTournament,ViewMatches,ViewProfile;
+
+    @FXML
+    private ListView<String> todaysmatches;
+
+    
 
     @FXML
     void JoinTournamentAction(ActionEvent event) throws IOException {
@@ -41,6 +51,12 @@ public class stuController extends App {
         stage.setScene(scene);
         stage.show();
     }
+
+    // @Override
+    // public void initialize(URL arg0, ResourceBundle arg1) {
+    //     todaysmatches.setItems(items);
+        
+    // }
 
     
 }

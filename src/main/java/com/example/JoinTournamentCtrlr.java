@@ -38,7 +38,7 @@ public class JoinTournamentCtrlr extends stuController implements Initializable{
     @FXML
     void availabletoursLVAction(MouseEvent event) {
         String s = availabletoursLV.getSelectionModel().getSelectedItem();
-        detaillabel.setText(s);
+        detaillabel.setText(s+"teams :       winner:    points: ");
     }
 
     @FXML
@@ -55,7 +55,7 @@ public class JoinTournamentCtrlr extends stuController implements Initializable{
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        for(int i =0,h='a';i<a.length;i++,h++){availabletoursLV.getItems().add(a[i]+h);}
+        for(int i =0,h='a';i<a.length;i++,h++){availabletoursLV.getItems().add("Tournament"+h);}
     }
 
     

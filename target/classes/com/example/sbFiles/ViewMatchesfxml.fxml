@@ -3,6 +3,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -24,7 +26,18 @@
                   </Button>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TableView fx:id="viewMatchesTableview" layoutX="162.0" layoutY="45.0" onContextMenuRequested="#viewMatchesTableviewAction" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="60.0">
+                    <columns>
+                      <TableColumn prefWidth="140.0" text="Team" />
+                      <TableColumn prefWidth="100.0" text="Win" />
+                        <TableColumn prefWidth="100.0" text="Lose" />
+                        <TableColumn prefWidth="100.0" text="Points" />
+                        <TableColumn prefWidth="100.0" text="Goals" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
         </items>
       </SplitPane>
    </children>
