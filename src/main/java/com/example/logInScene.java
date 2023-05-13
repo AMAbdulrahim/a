@@ -1,18 +1,11 @@
 package com.example;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.ArrayList;
 
 import com.example.programJFiles.HttpGetRequestSender;
 import com.example.programJFiles.MyMethods;
-import com.example.programJFiles.User;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
