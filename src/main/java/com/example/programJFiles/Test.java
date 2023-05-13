@@ -1,57 +1,18 @@
 package com.example.programJFiles;
 
+import java.util.ArrayList;
+import java.util.Date;
 
 public class Test {
 
 	public static void main(String[] args) {
-		//bracketsTest();
-		roundRobinTest();
+		bracketsTest();
+		//roundRobinTest();
 		//playground();
 	}
 	
 	private static void playground() {
-		Team[] array1 = new Team[3];
-		Team[] array2 = new Team[3];
-		
-		Student s1 = new Student(123 ,"Ghassan");
-		Student s2 = new Student(124 ,"Mohammad");
-		Student s3 = new Student(125 ,"Salem");
-		Student s4 = new Student(126 ,"Ahmad");
-		Student s5 = new Student(127 ,"Ali");
-		
-		array1[0] = new Team("C", 1, s1);
-		array1[1] = new Team("D", 1, s2);
-		array1[2] = new Team("F", 1, s3);
-		array2[0] = new Team("T", 1, s4);
-		array2[1] = new Team("B", 1, s5);
-		array2[2] = null;
-		System.out.println(array1[0]+" " + array1[1]+" " + array1[2]+" ");
-		System.out.println(array2[0]+" " + array2[1]+" " + array2[2]+" ");
-		System.out.println();
-		System.out.println();
-		rotateArray(array1, array2);
-		System.out.println(array1[0]+" " + array1[1]+" " + array1[2]+" ");
-		System.out.println(array2[0]+" " + array2[1]+" " + array2[2]+" ");
-	}
-	
-	public static void rotateArray(Team[] array1, Team[] array2) {
-		Team tmp1 = array1[array1.length-1];
-		Team tmp2 = array2[0];
-		for(int i=1; i<array1.length-1; i++) {
-			array1[i+1] = array1[i];
-		}
-		array1[1] = tmp2;
-		
-		for(int i=0; i<array2.length-1; i++) {
-			array2[i] = array2[i+1];
-		}
-		array2[array2.length-1] = tmp1;
-	}
-
-	public static void roundRobinTest() {
 		Tournament r = new Tournament("Test", new Game("Football", 1), Tournament.Type.ROUNDROBBIN, 6);
-
-		
 		
 		Student s1 = new Student(123 ,"Ghassan");
 		Student s2 = new Student(124 ,"Mohammad");
@@ -73,8 +34,47 @@ public class Test {
 		r.addTeam(t4);
 		r.addTeam(t5);
 		r.addTeam(t6);
-
+	}
+	
+	public static void rotateArray(Team[] array1, Team[] array2) {
+		Team tmp1 = array1[array1.length-1];
+		Team tmp2 = array2[0];
+		for(int i=1; i<array1.length-1; i++) {
+			array1[i+1] = array1[i];
+		}
+		array1[1] = tmp2;
 		
+		for(int i=0; i<array2.length-1; i++) {
+			array2[i] = array2[i+1];
+		}
+		array2[array2.length-1] = tmp1;
+	}
+
+	public static void roundRobinTest() {
+		Tournament r = new Tournament("Test", new Game("Football", 1), Tournament.Type.ROUNDROBBIN, 6);
+		
+		Student s1 = new Student(123 ,"Ghassan");
+		Student s2 = new Student(124 ,"Mohammad");
+		Student s3 = new Student(125 ,"Salem");
+		Student s4 = new Student(126 ,"Ahmad");
+		Student s5 = new Student(127 ,"Ali");
+		Student s6 = new Student(128 ,"Ali");
+		
+		Team t1 = new Team("Tigers", 1, s1);
+		Team t2 = new Team("Fighters", 1, s2);
+		Team t3 = new Team("Bees", 1, s3);
+		Team t4 = new Team("Cats", 1, s4);
+		Team t5 = new Team("Dogs", 1, s5);
+		Team t6 = new Team("Bats", 1, s6);
+		
+		r.addTeam(t1);
+		r.addTeam(t2);
+		r.addTeam(t3);
+		r.addTeam(t4);
+		r.addTeam(t5);
+		r.addTeam(t6);
+		
+		r.setDates(new Date(2023, 5, 13), new Date(2023, 5, 30));
 		
 		r.startTournament();
 		
@@ -149,6 +149,8 @@ public class Test {
 		b.addTeam(t4);
 		b.addTeam(t5);
 		
+		b.setDates(new Date(2023, 5, 13), new Date(2023, 5, 30));
+		
 		b.startTournament();
 		
 		System.out.println("Teams in tourny: " + b.getTeams());
@@ -161,8 +163,6 @@ public class Test {
 		Match m = b.getFirstUnplayedMatch();
 		m.addGoals1(4);
 		m.matchDone();
-
-		
 		
 		b.checkRoundEndBrackets();
 		

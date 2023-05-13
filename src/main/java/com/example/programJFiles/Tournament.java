@@ -2,9 +2,10 @@ package com.example.programJFiles;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Collections;
 
-public class Tournament implements Serializable{
+public class Tournament implements Serializable {
 	private String name;
 	private Game game;
 	private Type type;
@@ -13,6 +14,9 @@ public class Tournament implements Serializable{
 	private boolean acceptingTeams = true;	//Set to false when tournament starts
 	private int currentRoundNum = 0;
 	private ArrayList<ArrayList<Match>> rounds;
+	private Date startDate = null;
+	private Date endDate = null;
+	private ArrayList<Date> matchDates;
 	
 	public enum Type{
 		ROUNDROBBIN,
@@ -32,6 +36,39 @@ public class Tournament implements Serializable{
 		this.type = type;
 		this.maxTeamsNum = maxTeamsNum;
 		this.teams = new ArrayList<>();
+	}
+	
+	public Type getType() {
+		return this.type;
+	}
+	
+	public void setDates(Date startDate, Date endDate) {
+		if(!endDate.after(startDate))
+			throw new IllegalArgumentException("Start date must be before end date");
+		this.startDate = startDate;
+		this.endDate = endDate;
+	}
+	
+	public void setStartDate(Date startDate) {
+		if(this.endDate != null)
+			setDates(startDate, this.endDate);
+		else
+			this.startDate = startDate;
+	}
+	
+	public void setEndDate(Date endDate) {
+		if(this.startDate != null)
+			setDates(this.startDate, endDate);
+		else
+			this.endDate = endDate;
+	}
+	
+	public Date getStartDate() {
+		return startDate;
+	}
+	
+	public Date getEndDate() {
+		return endDate;
 	}
 	
 	public ArrayList<Team> getTeams(){
@@ -106,9 +143,11 @@ public class Tournament implements Serializable{
 	public void startTournament() {
 		if(this.teams.size() <= 2)		//Can't start a tournament with one team
 			throw new IllegalArgumentException("Error: Can't start tournaments with less than 3 teams");
+		if(startDate == null || endDate == null)
+			throw new IllegalArgumentException("Error: Can't start tournaments with no start or end date");
 		
 		this.acceptingTeams = false;
-		
+		determineDates();
 		Collections.shuffle(teams);		//Shuffle teams to assign them to matches randomly
 		
 		if(this.type == Type.BRACKETS)
@@ -117,6 +156,35 @@ public class Tournament implements Serializable{
 			startRoundRobin();
 	}
 	
+	private void determineDates() {
+		matchDates = new ArrayList<>();
+		
+		int tourMatchNum = determineMatchNum();
+		int tourDays = Math.abs((int)MyMethods.getDifferenceDays(startDate, endDate));
+		
+		float gap = tourDays / ((float)tourMatchNum);
+		
+		for(int i=0; i<tourMatchNum; i++) {
+			int daysFromStart = (int)Math.ceil(gap * i);
+			matchDates.add(MyMethods.addDaysTo(startDate, daysFromStart));
+		}
+	}
+	
+	private Date popFirstDate() {
+		Date d = matchDates.get(0);
+		matchDates.remove(0);
+		return d;
+	}
+
+	private int determineMatchNum() {
+		int matchNum = 0;
+		if(this.type == Type.BRACKETS) {
+			return this.teams.size() - 1;
+		}
+		
+		return getTotalRoundsNum() * (this.teams.size() / 2);
+	}
+
 	private void startBrackets() {
 		int roundsNum = getTotalRoundsNum();
 		int firstRoundMatchNum = (int)Math.pow(2, roundsNum - 1);
@@ -141,7 +209,12 @@ public class Tournament implements Serializable{
 				t2 = this.teams.get(teamCounter);
 				teamCounter++;
 			}
-			roundOne.add(new Match(t1, t2));
+			
+			Match m = new Match(t1, t2);
+			
+			if(t1 != null && t2 != null)
+				m.setMatchDate(popFirstDate());
+			roundOne.add(m);
 		}
 	}
 	
@@ -174,6 +247,8 @@ public class Tournament implements Serializable{
 			counter++;
 			
 			Match m = new Match(t1, t2);
+			if(t1 != null && t2 != null)
+				m.setMatchDate(popFirstDate());
 			nextRound.add(m);
 		}
 	}
@@ -439,7 +514,9 @@ public class Tournament implements Serializable{
 		
 		for(int i=0; i<this.rounds.size(); i++) {
 			for(int j=0; j<teamArr1.length; j++) {
-				this.rounds.get(i).add(new Match(teamArr1[j], teamArr2[j]));
+				if(teamArr1[j] != null && teamArr2[j] != null) {
+					this.rounds.get(i).add(new Match(teamArr1[j], teamArr2[j], popFirstDate()));
+				}
 			}
 			rotateArray(teamArr1, teamArr2);
 		}

@@ -1,10 +1,13 @@
 package com.example.programJFiles;
 
+import java.io.Serializable;
+import java.util.Date;
 
-public class Match {
+public class Match implements Serializable {
 	Team team1, team2;	//An individuals game is presented by a team of capacity = 1, for the sake of generalization
 	int goals1 = 0;
 	int goals2 = 0;
+	Date matchDate = null;
 	boolean matchDone = false;
 	
 	enum Winning{	//Used enumeration because to avoid special cases
@@ -20,6 +23,15 @@ public class Match {
 			this.matchDone = true;
 		this.team1 = team1;
 		this.team2 = team2;
+	}
+	
+	public Match(Team team1, Team team2, Date matchDate) {
+		this(team1, team2);
+		this.matchDate = matchDate;
+	}
+	
+	public void setMatchDate(Date matchDate) {
+		this.matchDate = matchDate;
 	}
 	
 	public Team getTeam1() {
@@ -145,10 +157,18 @@ public class Match {
 	public String toString() {
 		String t1 = "null";
 		String t2 = "null";
+		int day = 0;
+		int month = 0;
+		int year = 0;
+		if(matchDate != null) {
+			day = matchDate.getDate();
+			month = matchDate.getMonth();
+			year = matchDate.getYear();
+		}
 		if(team1 != null)
 			t1 = team1.getName();
 		if(team2 != null)
 			t2 = team2.getName();
-		return t1 + " vs " + t2;
+		return t1 + " vs " + t2 + ", " + day + ", " + month + ", " + year;
 	}
 }

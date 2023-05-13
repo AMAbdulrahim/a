@@ -1,8 +1,9 @@
 package com.example.programJFiles;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Team {
+public class Team implements Serializable {
 	private String name;
 	private ArrayList<Student> students;
 	private Student teamCreator;

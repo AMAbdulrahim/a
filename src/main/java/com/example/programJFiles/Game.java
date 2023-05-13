@@ -2,7 +2,7 @@ package com.example.programJFiles;
 
 import java.io.Serializable;
 
-public class Game implements Serializable{			//The game object is created on the tournament class not match class
+public class Game implements Serializable {			//The game object is created on the tournament class not match class
 	private String name;
 	private int teamCapacity;
 	
