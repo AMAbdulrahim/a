@@ -14,7 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class notStuController extends App  {
+public class notStuController extends App  implements Initializable{
 
     
 
@@ -76,11 +76,16 @@ public class notStuController extends App  {
 
 
 
-    // @Override
-    // public void initialize(URL arg0, ResourceBundle arg1) {
-    //     helloUserLabel.setText("Hello, A");
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
         
-    // }
+        if(helloUserLabel == null)
+            return;
+
+        helloUserLabel.setText("Hello, "+user.name);
+
+        
+    }
 
     
 }

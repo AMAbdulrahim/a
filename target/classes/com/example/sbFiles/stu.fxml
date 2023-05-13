@@ -28,6 +28,11 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Button>
+                  <Label fx:id="helloLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="74.0" layoutY="14.0" text="Hello" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">

@@ -41,12 +41,6 @@ public class App extends Application {
     static
     ArrayList<String> teams = new ArrayList<>();
 
-    
-    
-
-
-    
-
 
     protected Stage stage;
     protected Scene scene;

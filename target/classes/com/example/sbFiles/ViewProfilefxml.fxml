@@ -27,23 +27,38 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Label layoutX="50.0" layoutY="50.0" text="Name :" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="50.0">
+                  <Label layoutX="50.0" layoutY="50.0" text="Name  :" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="50.0">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="45.0" layoutY="100.0" text="ID :" AnchorPane.leftAnchor="50.0">
+                  <Label layoutX="45.0" layoutY="100.0" text="ID        :" AnchorPane.leftAnchor="20.0">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="45.0" layoutY="150.0" text="Email :" AnchorPane.leftAnchor="50.0">
+                  <Label layoutX="45.0" layoutY="150.0" text="Email   :" AnchorPane.leftAnchor="20.0">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
                   <ListView fx:id="previousTours" layoutX="354.0" layoutY="60.0" onMouseClicked="#previousToursAction" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0" />
                   <Label layoutX="375.0" layoutY="60.0" text="Previous Tournaments" AnchorPane.topAnchor="50.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nameLabel" layoutX="80.0" layoutY="50.0" text="Label">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="idLabel" layoutX="80.0" layoutY="100.0" text="Label">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="emailLabel" layoutX="80.0" layoutY="150.0" text="Label">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>

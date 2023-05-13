@@ -1,23 +1,32 @@
 package com.example;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
-public class stuController extends App {
+public class stuController extends App implements Initializable{
 
     @FXML
     private Button JoinTournament,ViewMatches,ViewProfile;
 
     @FXML
     private ListView<String> todaysmatches;
+
+    @FXML
+    private Label helloLabel;
+
 
     
 
@@ -48,11 +57,17 @@ public class stuController extends App {
         stage.show();
     }
 
-    // @Override
-    // public void initialize(URL arg0, ResourceBundle arg1) {
-    //     todaysmatches.setItems(items);
-        
-    // }
+    
+
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        if(helloLabel == null)
+            return;
+
+        String[] s = user.name.split(" "); 
+        String r = s[1].substring(0, 1)+s[1].substring(1).toLowerCase();
+        helloLabel.setText("Hello, "+r);
+    }
 
     
 }
