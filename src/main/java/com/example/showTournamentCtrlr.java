@@ -76,14 +76,18 @@ public class showTournamentCtrlr extends notStuController implements Initializab
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
 
-        
 
-        for (int i = 0; i < tournamentsList.size(); i++) {
-            if(!tournamentsList.get(i).tournamentDone()){
-                toursshow.getItems().add(tournamentsList.get(i).getName());
-            }
-            
+        if (toursshow == null){
+            return;
         }
+
+        
+        for (int i = 0; i < tournamentsList.size(); i++) 
+            if(!tournamentsList.get(i).tournamentDone())
+                toursshow.getItems().add(tournamentsList.get(i).getName());
+            
+            
+        
 
 
         

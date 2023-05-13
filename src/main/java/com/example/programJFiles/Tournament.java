@@ -220,6 +220,10 @@ public class Tournament implements Serializable {
 			roundOne.add(m);
 		}
 	}
+
+	public boolean getTournamentStarted(){
+		return !this.acceptingTeams;
+	}
 	
 	public void checkRoundEndBrackets() {
 		if(this.type != Type.BRACKETS)
