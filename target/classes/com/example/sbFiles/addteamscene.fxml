@@ -19,25 +19,20 @@
          </font>
       </Label>
       <TextField fx:id="teamNamefield" layoutX="153.0" layoutY="167.0" prefHeight="26.0" prefWidth="100.0" />
-      <TextField fx:id="teamCapacityfield" layoutX="272.0" layoutY="167.0" prefHeight="26.0" prefWidth="100.0" />
       <Label layoutX="163.0" layoutY="135.0" text="team name">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Label>
-      <Label layoutX="273.0" layoutY="135.0" text="team capacity">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font></Label>
-      <Button fx:id="createTeamOK" layoutX="394.0" layoutY="164.0" mnemonicParsing="false" onAction="#createTeamOKaction" prefHeight="31.0" prefWidth="66.0" text="ok">
+      <Button fx:id="createTeamOK" layoutX="276.0" layoutY="164.0" mnemonicParsing="false" onAction="#createTeamOKaction" prefHeight="31.0" prefWidth="66.0" text="ok">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Label fx:id="addstuLabel" layoutX="28.0" layoutY="307.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="110.0" text="add students" visible="false">
+      <Label fx:id="addstuLabel" layoutX="28.0" layoutY="307.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="110.0" text="add students">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Label>
-      <TextField fx:id="studentIdfield" layoutX="153.0" layoutY="307.0" prefHeight="26.0" prefWidth="100.0" visible="false" AnchorPane.leftAnchor="147.0" />
-      <Button fx:id="addStudent" layoutX="514.0" layoutY="304.0" mnemonicParsing="false" onAction="#addStudentaction" text="add" visible="false">
+      <TextField fx:id="studentIdfield" layoutX="153.0" layoutY="307.0" prefHeight="26.0" prefWidth="100.0" AnchorPane.leftAnchor="147.0" />
+      <Button fx:id="addStudent" layoutX="276.0" layoutY="304.0" mnemonicParsing="false" onAction="#addStudentaction" prefHeight="31.0" prefWidth="66.0" text="add">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
@@ -47,36 +42,12 @@
          </font>
       </Label>
       <TextField fx:id="stuID" layoutX="153.0" layoutY="97.0" prefHeight="26.0" prefWidth="100.0" />
-      <TextField fx:id="stuFN" layoutX="272.0" layoutY="97.0" prefHeight="26.0" prefWidth="100.0" />
-      <TextField fx:id="stuLN" layoutX="394.0" layoutY="97.0" prefHeight="26.0" prefWidth="100.0" />
       <Label layoutX="195.0" layoutY="70.0" text="ID">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="286.0" layoutY="70.0" text="first name">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="410.0" layoutY="70.0" text="last name">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="studentFNfield" layoutX="272.0" layoutY="307.0" prefHeight="26.0" prefWidth="100.0" visible="false" />
-      <TextField fx:id="studentLNfield" layoutX="394.0" layoutY="307.0" prefHeight="26.0" prefWidth="100.0" visible="false" />
-      <Label fx:id="s1" layoutX="195.0" layoutY="277.0" text="ID" visible="false">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label fx:id="s2" layoutX="286.0" layoutY="277.0" text="first name" visible="false">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label fx:id="s3" layoutX="410.0" layoutY="277.0" text="last name" visible="false">
+      <Label fx:id="s1" layoutX="195.0" layoutY="277.0" text="ID">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -86,12 +57,12 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Label fx:id="TM_left" alignment="CENTER" layoutX="319.0" layoutY="225.0" text="0" textAlignment="CENTER" visible="false">
+      <Label fx:id="TM_left" alignment="CENTER" layoutX="319.0" layoutY="225.0" text="0" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <Label fx:id="TML" layoutX="163.0" layoutY="230.0" text="Team member left :" visible="false">
+      <Label fx:id="TML" layoutX="163.0" layoutY="230.0" text="Team member left :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

@@ -65,7 +65,7 @@ public class notStuController extends App  implements Initializable{
 
     @FXML
     void showTournamentBtnAction(ActionEvent event) throws IOException {
-
+        // App.prevScene = "sbFiles/nstu.fxml";
         Parent root = FXMLLoader.load(getClass().getResource("sbFiles/showTournamentScene.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);

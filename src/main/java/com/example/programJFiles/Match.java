@@ -153,22 +153,33 @@ public class Match implements Serializable {
 			return team1;
 		return team2;
 	}
+
+	public boolean getMatchDone(){
+
+		return matchDone;
+	}
 	
 	public String toString() {
 		String t1 = "null";
 		String t2 = "null";
-		int day = 0;
-		int month = 0;
-		int year = 0;
-		if(matchDate != null) {
-			day = matchDate.getDate();
-			month = matchDate.getMonth();
-			year = matchDate.getYear();
-		}
+		
 		if(team1 != null)
 			t1 = team1.getName();
 		if(team2 != null)
 			t2 = team2.getName();
-		return t1 + " vs " + t2 + ", " + day + ", " + month + ", " + year;
+		return t1 + " vs " + t2 ;
+	}
+
+	public String getDateString() {
+	int day = 0;
+	int month = 0;
+	int year = 0;
+	if(matchDate != null) {
+		day = matchDate.getDate();
+		month = matchDate.getMonth();
+		year = matchDate.getYear();
+	}
+	return day + ", " + month + ", " + year;	
+
 	}
 }

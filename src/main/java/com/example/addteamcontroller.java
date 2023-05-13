@@ -46,8 +46,26 @@ public class addteamcontroller extends notStuController {
 
     
     @FXML
-    void addStudentaction(ActionEvent event) {
-        addstu = new Student(Integer.parseInt(studentIdfield.getText()), studentFNfield.getText()+" "+ studentLNfield.getText());
+    void addStudentaction(ActionEvent event) throws IOException {
+
+        User u = HttpGetRequestSender.userHandler(studentIdfield.getText());
+        if(u == null){
+            Alert alert = new Alert(AlertType.WARNING);
+        alert.setTitle("ERROR");alert.setHeaderText(null);
+        alert.setContentText("User Does Not Exist");
+        alert.showAndWait();
+            return;
+        }
+        if(!u.type.equals("student")){
+            Alert alert = new Alert(AlertType.WARNING);
+            alert.setTitle("ERROR");alert.setHeaderText(null);
+            alert.setContentText("User is Not student");
+            alert.showAndWait();
+                return;
+
+        }
+
+        stu = new Student(Integer.parseInt(studentIdfield.getText()), u.name);
         
         if (team0.isFull()){
             Alert alert = new Alert(AlertType.ERROR);
@@ -56,32 +74,56 @@ public class addteamcontroller extends notStuController {
             alert.showAndWait();
         }
         else {
-            team0.addStudent(addstu);
+            team0.addStudent(stu);
         }
-        studentIdfield.setText("");studentFNfield.setText("");studentLNfield.setText("");
+        studentIdfield.setText("");
+
+        if(team0.isFull()){
+            selectedTournament.addTeam(team0);
+        }
+
+        TM_left.setText(""+(team0.getTeamCapacity()-team0.getTeamSize()));
+        
 
     }
 
     @FXML
-    void createTeamOKaction(ActionEvent event) {
-        stu = new Student(Integer.parseInt(stuID.getText()), stuFN.getText()+" "+ stuLN.getText());
-        team0 = new Team(teamNamefield.getText(), Integer.parseInt(teamCapacityfield.getText()), stu); 
-        stu.getID();
-        
-        stuFN.setText("");stuID.setText("");stuLN.setText("");
+    void createTeamOKaction(ActionEvent event) throws IOException {
+        User u = HttpGetRequestSender.userHandler(stuID.getText().trim());
 
+        if(u == null){
+            Alert alert = new Alert(AlertType.WARNING);
+        alert.setTitle("ERROR");alert.setHeaderText(null);
+        alert.setContentText("User Does Not Exist");
+        alert.showAndWait();
+            return;
+        }
+        if(!u.type.equals("student")){
+            System.out.println(u.type);
+            Alert alert = new Alert(AlertType.WARNING);
+            alert.setTitle("ERROR");alert.setHeaderText(null);
+            alert.setContentText("User is Not student");
+            alert.showAndWait();
+                return;
+
+        }
+
+        
+        stu = new Student(Integer.parseInt(stuID.getText()), u.name);
+
+
+        team0 = new Team(teamNamefield.getText(), selectedTournament.getGame().getTeamCapacity(), stu); 
+
+        TM_left.setText(""+(team0.getTeamCapacity()-team0.getTeamSize()));
+
+        
 
         Alert alert = new Alert(AlertType.INFORMATION);
         alert.setTitle("Team added");alert.setHeaderText(null);
         alert.setContentText("The team has been added successfully.");
         alert.showAndWait();
 
-        if (Integer.parseInt(teamCapacityfield.getText())!=1){
-            addstuLabel.setVisible(true);studentIdfield.setVisible(true);addStudent.setVisible(true);
-            studentFNfield.setVisible(true);studentLNfield.setVisible(true);
-            s1.setVisible(true);s2.setVisible(true);s3.setVisible(true);
-
-        }
+        
     }
 
 

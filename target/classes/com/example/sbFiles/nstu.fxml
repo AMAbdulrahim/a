@@ -12,11 +12,6 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="addTeam" layoutX="58.0" layoutY="100.0" mnemonicParsing="false" onAction="#addTeamBtnAction" text="Add Team" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                  </Button>
                   <Button fx:id="viewArchivedTournamentButton" layoutY="160.0" mnemonicParsing="false" onAction="#viewArchivedTournamentBtnAction" text="view archived tours" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <font>
                         <Font name="System Bold" size="15.0" />
@@ -32,7 +27,7 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Button fx:id="showTournamentBtn" layoutX="9.0" layoutY="284.0" mnemonicParsing="false" onAction="#showTournamentBtnAction" text="Show Tournaments" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                  <Button fx:id="showTournamentBtn" layoutY="100.0" mnemonicParsing="false" onAction="#showTournamentBtnAction" text="Show Tournaments" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>

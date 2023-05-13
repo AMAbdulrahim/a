@@ -40,6 +40,8 @@ public class showTournamentCtrlr extends notStuController implements Initializab
 
     @FXML
     void exitProgram(ActionEvent event) throws IOException {
+        
+
         Parent root = FXMLLoader.load(getClass().getResource("sbFiles/nstu.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);

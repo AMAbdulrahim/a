@@ -4,6 +4,7 @@ package com.example;
 import java.util.ArrayList;
 
 import com.example.programJFiles.Game;
+import com.example.programJFiles.Match;
 import com.example.programJFiles.Student;
 import com.example.programJFiles.Team;
 import com.example.programJFiles.Tournament;
@@ -21,8 +22,9 @@ import javafx.stage.Stage;
 public class App extends Application {
 
 
+    static String prevScene = "";
     static final String filePath = "tournamentFile.dat";
-    Team team0;
+    static Team team0;
     Student stu;
     Student addstu;
     Tournament tour;
@@ -31,6 +33,7 @@ public class App extends Application {
     static ArrayList<Tournament> tournamentsList;
 
    static Tournament selectedTournament;
+   static Match selectedMatch;
     
     protected ObservableList<String> items=FXCollections.observableArrayList();
 

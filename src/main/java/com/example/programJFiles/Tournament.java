@@ -104,6 +104,10 @@ public class Tournament implements Serializable {
 		newTeam.stopAcceptingStudents();
 		return 1;
 	}
+
+	public Game getGame(){
+		return game;
+	}
 	
 	//Teams can't be removed when the tournament starts
 	//Instead all their matches will be conceded
