@@ -24,7 +24,7 @@ import javafx.stage.Stage;
 public class App extends Application {
 
 
-    static final String filePath = "tournamentFile.txt";
+    static final String filePath = "tournamentFile.dat";
     Team team0;
     Student stu;
     Student addstu;
