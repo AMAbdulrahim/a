@@ -11,9 +11,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class notStuController extends App implements Initializable{
+public class notStuController extends App  {
 
     
 
@@ -26,7 +27,12 @@ public class notStuController extends App implements Initializable{
     @FXML
     private Button createTournamentBtn;
 
+    @FXML
+    private Label helloUserLabel ;
 
+
+    @FXML
+    private Button showTournamentBtn;
 
     @FXML
     void addTeamBtnAction(ActionEvent event) throws IOException {
@@ -57,11 +63,24 @@ public class notStuController extends App implements Initializable{
 
     }
 
+    @FXML
+    void showTournamentBtnAction(ActionEvent event) throws IOException {
 
-    @Override
-    public void initialize(URL arg0, ResourceBundle arg1) {
-        
+        Parent root = FXMLLoader.load(getClass().getResource("sbFiles/showTournamentScene.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
+
+
+
+
+    // @Override
+    // public void initialize(URL arg0, ResourceBundle arg1) {
+    //     helloUserLabel.setText("Hello, A");
+        
+    // }
 
     
 }

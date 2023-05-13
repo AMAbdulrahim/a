@@ -7,6 +7,11 @@ import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.ArrayList;
+
+import com.example.programJFiles.HttpGetRequestSender;
+import com.example.programJFiles.MyMethods;
+import com.example.programJFiles.User;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -35,59 +40,67 @@ public class logInScene extends App {
 
     
     @FXML
-    void loginbtnAct(ActionEvent event) throws IOException, URISyntaxException {
+    void loginbtnAct(ActionEvent event) throws IOException, URISyntaxException, ClassNotFoundException {
 
-        String string = "http://example.com";
-
-        URL url = (new URI(string)).toURL();
-        HttpURLConnection con = (HttpURLConnection) url.openConnection();
-        con.setRequestMethod("GET");
-
-
-
-        HttpURLConnection req = (HttpURLConnection) url.openConnection();
-        req.setRequestMethod("GET"); // specify the request type
-        req.setConnectTimeout(5000);
-        req.setReadTimeout(5000);
+        if(MyMethods.fileExists(App.filePath)){
+            App.tournamentsList= MyMethods.getTournamentsFromTxtFile(filePath);
+        }
+        else{
+            App.tournamentsList = new ArrayList<>();
+        }
+        
 
 
 
-        int status = req.getResponseCode();
+
+        String un = username.getText();
+        String p = password.getText();
+
+        App.user =  HttpGetRequestSender.logInHandler(un, p);
 
 
-        BufferedReader in = new BufferedReader(
-        new InputStreamReader(con.getInputStream()));
-        String inputLine;
-        StringBuffer content = new StringBuffer();
-        while ((inputLine = in.readLine()) != null) {
-            System.out.println();
-        content.append(inputLine);
+
+        if (user ==null){
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Username or password is incorrect");
+            alert.setContentText("Please try again.");
+            alert.showAndWait();
+
         }
 
 
+        else if(user.type.equals("student")){
+            System.out.println("openinf scene");
 
-        if (username.getText().equals("s") & password.getText().equals("1")){
             Parent root = FXMLLoader.load(getClass().getResource("sbFiles/stu.fxml"));
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
 
+
+
         }
-        else if (username.getText().equals("nots") & password.getText().equals("1")){
+
+        else if(user.type.equals("admin")){
+            System.out.println("openinf scene");
             Parent root = FXMLLoader.load(getClass().getResource("sbFiles/nstu.fxml"));
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
+
+
+
         }
-        else{
-            Alert alert = new Alert(AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("An error has occurred");
-            alert.setContentText("Please try again.");
-            alert.showAndWait();
+
+
+  
+            
         }
+
+
     }
 
     
@@ -95,4 +108,3 @@ public class logInScene extends App {
 
     
 
-}

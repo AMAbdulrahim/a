@@ -4,11 +4,11 @@ package com.example.programJFiles;
 public class User {
 	public String name;
 	public String type;
-	public String email;
+	public String id;
 	
-	public User(String name, String type, String email) {
+	public User(String name, String type,String id) {
 		this.name = name;
 		this.type = type;
-		this.email = email;
+		this.id = id;
 	}
 }

@@ -40,7 +40,6 @@ public class HttpGetRequestSender {
 	  response = response.replace("}", "");
 	  response = response.replace("\"name\":", "");
 	  response = response.replace("\"type\":", "");
-	  response = response.replace("\"email\":", "");
 	  response = response.replace(",", "");
 	  // System.out.println("Full response: "+response+"\n");
 	  
@@ -54,14 +53,11 @@ public class HttpGetRequestSender {
 	  index1 = index2 + 2;
 	  index2 = response.indexOf('"', index1 + 1);
 	  String type = response.substring(index1, index2);
-	  index1 = index2 + 2;
-	  index2 = response.indexOf('"', index1 + 1);
-	  String email = response.substring(index1, index2);
 	  
 //	  System.out.println(name);
 //	  System.out.println(type);
 //	  System.out.println(email);
-	  return new User(name, type, email);
+	  return new User(name, type,username);
   }
   
   public static User userHandler(int id) throws IOException {
@@ -78,7 +74,6 @@ public class HttpGetRequestSender {
 	  response = response.replace("}", "");
 	  response = response.replace("\"name\":", "");
 	  response = response.replace("\"type\":", "");
-	  response = response.replace("\"email\":", "");
 	  response = response.replace(",", "");
 	  // System.out.println("Full response: "+response+"\n");
 	  
@@ -92,14 +87,12 @@ public class HttpGetRequestSender {
 	  index1 = index2 + 2;
 	  index2 = response.indexOf('"', index1 + 1);
 	  String type = response.substring(index1, index2);
-	  index1 = index2 + 2;
-	  index2 = response.indexOf('"', index1 + 1);
-	  String email = response.substring(index1, index2);
+	  
 	  
 //	  System.out.println(name);
 //	  System.out.println(type);
 //	  System.out.println(email);
-	  return new User(name, type, email);
+	  return new User(name, type, username);
   }
   
   public static String sendGetRequest(String url, Map<String, String> params) throws IOException {

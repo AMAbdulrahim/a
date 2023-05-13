@@ -55,7 +55,7 @@ public class JoinTournamentCtrlr extends stuController implements Initializable{
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        for(int i =0,h='a';i<a.length;i++,h++){availabletoursLV.getItems().add("Tournament"+h);}
+        for(int i =0,h='a';i<6;i++,h++){availabletoursLV.getItems().add("Tournament"+h);}
     }
 
     

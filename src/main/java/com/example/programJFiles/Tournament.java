@@ -78,6 +78,9 @@ public class Tournament implements Serializable {
 	public boolean isFull() {
 		return teams.size() >= maxTeamsNum;
 	}
+
+
+	
 	
 	//Code 0 if accepting teams has stopped
 	//Code -1 for tournament is full
@@ -577,5 +580,26 @@ public class Tournament implements Serializable {
 			s = s + "Team: " + t.getName() + ", Points: " + getTeamPoints(t) + "\n";
 		}
 		return s;
+	}
+
+
+	public boolean tournamentDone() {
+		if(acceptingTeams)
+			return false;
+		if(this.type == Type.BRACKETS) {
+			if(this.currentRoundNum != (getTotalRoundsNum() - 1))
+				return false;
+			if(!this.rounds.get(currentRoundNum).get(0).matchDone)
+				return false;
+			return true;
+		}
+		
+		for(ArrayList<Match> round : this.rounds) {
+		for(Match match : round) {
+		if(!match.matchDone)
+		return false;
+		}
+		}
+		return true;
 	}
 }
