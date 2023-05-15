@@ -137,7 +137,7 @@ public class tournamentCtrlr extends showTournamentCtrlr implements Initializabl
 private void handelRoundRobin(GridPane gridPane) {
 
 
-    // testTournamentRR();
+    testTournamentRR();
 
     if(!App.selectedTournament.getTournamentStarted()){
         return;
@@ -332,7 +332,7 @@ void getTestTournament(){
 void handelBracket(GridPane gridPane){
 
 
-    // getTestTournament();
+    getTestTournament();
 
 
     if(App.selectedTournament.getTournamentStarted()){

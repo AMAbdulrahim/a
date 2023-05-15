@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.showMatchCtrlr">
    <children>
       <SplitPane dividerPositions="0.15110441767068275" layoutX="200.0" layoutY="69.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -19,35 +18,74 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Button fx:id="backBtn" layoutX="24.0" layoutY="15.0" mnemonicParsing="false" onAction="#backBtnAction" text="Button" />
+                  <Button fx:id="backBtn" layoutX="24.0" layoutY="15.0" mnemonicParsing="false" onAction="#backBtnAction" text="Back">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Button>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <SplitPane dividerPositions="0.35843373493975894, 0.6111111111111109" layoutX="170.0" layoutY="51.0" prefHeight="335.2" prefWidth="599.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <SplitPane dividerPositions="0.34839357429718865, 0.6562918340026772" layoutX="170.0" layoutY="51.0" prefHeight="335.2" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="334.0" prefWidth="242.0">
                            <children>
-                              <Label fx:id="team1Label" layoutX="94.0" layoutY="28.0" text="Label" />
-                              <Label fx:id="team1GoalsLabel" layoutX="92.0" layoutY="126.0" text="Label" />
-                              <Button fx:id="addGoalT1Btn" layoutX="68.0" layoutY="230.0" mnemonicParsing="false" onAction="#addGoalT1BtnAction" text="add goal" />
-                              <Button fx:id="subGoalT1Btn" layoutX="57.0" layoutY="262.0" mnemonicParsing="false" onAction="#subGoalT1BtnAction" text="subtract goal" />
-                              <Label layoutX="93.0" layoutY="91.0" text="goals" />
+                              <Label fx:id="team1Label" alignment="CENTER" layoutX="94.0" layoutY="28.0" text="Label" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font></Label>
+                              <Label fx:id="team1GoalsLabel" alignment="CENTER" layoutX="92.0" layoutY="126.0" text="Label" AnchorPane.bottomAnchor="190.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font></Label>
+                              <Button fx:id="addGoalT1Btn" layoutX="68.0" layoutY="230.0" mnemonicParsing="false" onAction="#addGoalT1BtnAction" text="add goal" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font></Button>
+                              <Button fx:id="subGoalT1Btn" layoutX="57.0" layoutY="262.0" mnemonicParsing="false" onAction="#subGoalT1BtnAction" text="subtract goal" AnchorPane.bottomAnchor="40.00000000000002" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font></Button>
+                              <Label alignment="CENTER" layoutX="93.0" layoutY="91.0" text="goals" AnchorPane.bottomAnchor="230.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font></Label>
                            </children>
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="334.0" prefWidth="174.0">
                            <children>
-                              <Label fx:id="dateLabel" layoutX="58.0" layoutY="25.0" text="Label" />
-                              <CheckBox fx:id="MatchDoneCB" layoutX="22.0" layoutY="303.0" mnemonicParsing="false" onAction="#MatchDoneCBAction" text="Match done" />
+                              <Label fx:id="dateLabel" alignment="CENTER" layoutY="58.0" text="Label" AnchorPane.bottomAnchor="254.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="58.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font></Label>
+                              <CheckBox fx:id="MatchDoneCB" layoutX="36.0" layoutY="274.0" mnemonicParsing="false" onAction="#MatchDoneCBAction" prefHeight="20.0" prefWidth="107.0" text="Match done" AnchorPane.bottomAnchor="39.60000000000002" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="36.0">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font></CheckBox>
                            </children>
                         </AnchorPane>
-                        <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                        <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="334.0" prefWidth="222.0">
                            <children>
-                              <Label fx:id="team2Label" layoutX="100.0" layoutY="21.0" text="Label" />
-                              <Label fx:id="team2GoalsLabel" layoutX="100.0" layoutY="105.0" text="Label" />
-                              <Button fx:id="addGoalT2Btn" layoutX="84.0" layoutY="230.0" mnemonicParsing="false" onAction="#addGoalT2BtnAction" text="add goal" />
-                              <Button fx:id="subGoalT2Btn" layoutX="73.0" layoutY="266.0" mnemonicParsing="false" onAction="#subGoalT2BtnAction" text="subtract goal" />
-                              <Label layoutX="99.0" layoutY="80.0" text="goals" />
+                              <Label fx:id="team2Label" alignment="CENTER" layoutX="100.0" layoutY="21.0" text="Label" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font></Label>
+                              <Label fx:id="team2GoalsLabel" alignment="CENTER" layoutX="100.0" layoutY="105.0" text="Label" AnchorPane.bottomAnchor="190.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font></Label>
+                              <Button fx:id="addGoalT2Btn" layoutX="84.0" layoutY="230.0" mnemonicParsing="false" onAction="#addGoalT2BtnAction" text="add goal" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font></Button>
+                              <Button fx:id="subGoalT2Btn" layoutX="73.0" layoutY="266.0" mnemonicParsing="false" onAction="#subGoalT2BtnAction" text="subtract goal" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font></Button>
+                              <Label alignment="CENTER" layoutX="99.0" layoutY="80.0" text="goals" AnchorPane.bottomAnchor="230.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font></Label>
                            </children>
                         </AnchorPane>
                     </items>

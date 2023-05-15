@@ -1,15 +1,21 @@
 package com.example;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 public class showMatchCtrlr extends tournamentCtrlr implements Initializable{
 
@@ -70,7 +76,12 @@ public class showMatchCtrlr extends tournamentCtrlr implements Initializable{
     }
 
     @FXML
-    void backBtnAction(ActionEvent event) {
+    void backBtnAction(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("sbFiles/tournament.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
 
     }
 
@@ -104,7 +115,7 @@ public class showMatchCtrlr extends tournamentCtrlr implements Initializable{
     public void initialize(URL arg0, ResourceBundle arg1) {
 
 
-        if(matchNameLabel == null || team1GoalsLabel == null || team2GoalsLabel == null || team1Label == null || team2Label == null || dateLabel == null)
+        if(matchNameLabel == null || team1GoalsLabel == null || team2GoalsLabel == null || team1Label == null || team2Label == null || dateLabel == null || backBtn == null)
             return;
 
         
